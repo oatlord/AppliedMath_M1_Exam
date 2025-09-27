@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Destroyable
   - Walls
+  - Ball
   layers:
   - Default
   - TransparentFX
