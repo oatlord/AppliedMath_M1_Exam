@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StartMenuController : MonoBehaviour
+public class RetryController : MonoBehaviour
 {
     public void OnStartClick()
     {
