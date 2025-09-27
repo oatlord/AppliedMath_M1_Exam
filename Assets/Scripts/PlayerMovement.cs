@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    private CharacterController characterController;
+    private Rigidbody characterController;
     private InputSystem_Actions inputActions;
     public float playerSpeed = 10f;
 
@@ -26,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        characterController = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         Vector2 inputVector = inputActions.Player.Move.ReadValue<Vector2>();
         Vector3 move = new Vector3(inputVector.x, 0, inputVector.y);
-        characterController.Move(move * Time.deltaTime * playerSpeed);
+        characterController.velocity = move * playerSpeed;
     }
 }
